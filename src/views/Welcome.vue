@@ -12,7 +12,5 @@
     </div>
 </template>
 <script>
-import Loader from '../components/extra/loader.vue';
-import { defineComponent } from 'vue';
 </script>
 

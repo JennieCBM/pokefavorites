@@ -55,7 +55,7 @@
   </template>
 <script>
 import { isProxy, toRaw } from 'vue';
-import PokemonList from '../components/pokemonList.vue';
+import PokemonList from '../components/PokemonList.vue';
 import EmptyList from '../components/EmtyList.vue';
 import CustomModal from '../components/extra/CustomModal.vue';
 
@@ -89,7 +89,7 @@ export default {
       localStorage.setItem('activeTab', index);
     },
     loadFavorites() {
-      this.favorites = JSON.parse(localStorage.getItem('myFavorites') || "");
+      this.favorites = localStorage.getItem('myFavorites') && JSON.parse(localStorage.getItem('myFavorites'));
     },
     async handlePokemonSelected(data) {
       try {
