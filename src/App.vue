@@ -7,8 +7,8 @@
 
 <script>
 import { RouterView } from 'vue-router';
-import Loader from './components/extra/loader.vue';
-import { isProxy, toRaw } from 'vue'
+import Loader from './components/extra/Loader.vue';
+import { isProxy, toRaw } from 'vue';
 export default {
   data() {
     return {

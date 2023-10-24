@@ -40,7 +40,7 @@
     computed: {
       filteredPokemonList(){
         if(this.favoritesIsSelected){
-          let tempArr = JSON.parse(localStorage.getItem('myFavorites'));
+          let tempArr = localStorage.getItem('myFavorites') ? JSON.parse(localStorage.getItem('myFavorites')) : [];
           let newArr = this.filteredPokemons.filter((pokemon) => { 
             return tempArr.includes(pokemon.name)});
           return newArr

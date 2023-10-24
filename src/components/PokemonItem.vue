@@ -31,9 +31,9 @@ export default {
   methods: {
     toggleFavorite(e) {
       e.stopPropagation()
-      let tempArr = JSON.parse(localStorage.getItem('myFavorites'));
-      if (JSON.parse(localStorage.getItem('myFavorites')).includes(this.name)){
-        tempArr = tempArr.filter((item) => item !== this.name);
+      let tempArr = localStorage.getItem('myFavorites') ? JSON.parse(localStorage.getItem('myFavorites')) : [];
+      if (localStorage.getItem('myFavorites') && JSON.parse(localStorage.getItem('myFavorites')).includes(this.name)){
+        tempArr = tempArr?.filter((item) => item !== this.name);
       }else{
         tempArr.push(this.name);
       }
@@ -41,7 +41,7 @@ export default {
       this.getIfFavorite();
     },
     getIfFavorite() {
-      this.isFavorite = JSON.parse(localStorage.getItem('myFavorites')).includes(this.name);
+      this.isFavorite = JSON.parse(localStorage.getItem('myFavorites'))?.includes(this.name);
     },
     handleItemClick() {
       this.$emit("pokemon-selected", {name: this.name, isFavorite: this.isFavorite});
